@@ -1,0 +1,35 @@
+doctype html
+html lang="ja"
+  head
+    title DQX Chart
+    meta charset="utf-8"
+    link href="css/bootstrap.min.css" rel="stylesheet"
+  body
+    div class="container"
+      div id="header"
+        div class="hero-unit"
+          h1
+            a href="/" DQX Chart
+      ul class="nav nav-tabs"
+        li class="active"
+          a href="#" All
+      div class="row"
+        div class="span9" style=""
+          table class="table table-hover table-condensed table-striped"
+            thead
+              tr
+                th 名前
+                th 価格
+            tbody
+              - @item_list.each do |item|
+                tr
+                  td
+                    a href="/items/#{item[:id]}" #{item[:name]}
+                  td #{item[:amt]}
+        div class="span3" style=""
+          ul class="nav nav-pills nav-stacked"
+            li class="active"
+              a href="#" All time
+    script src="js/jquery-1.9.1.js"
+    script src="js/bootstrap.min.js"
+    script src="js/highstock.js"
